@@ -12,8 +12,9 @@ body {
 
 button {
     color: black;
+    cursor: pointer;
 }
 
-.input {
+input {
     font-size: 16px;
 }

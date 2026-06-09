@@ -1,0 +1,716 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+.map {
+    flex: 1;
+    height: 300px;
+    border: solid 2px black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.FAQ-main {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px;
+    gap: 10px;
+}
+
+.FAQ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.FAQ-p {
+    flex: 1;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    height: 50px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    margin: 0px;
+}
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.FAQ-01 {
+    height: 60px;
+    border-bottom: solid 2px black;
+    padding: 0px 10px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.FAQ-01-after {
+    height: 210px;
+}
+
+.question-01 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.answer-01 {
+    height: 100px;
+}
+
+.qst-01-button {
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-family: arial;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: all .2s;
+}
+
+.qst-01-button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.qst-01-button:active {
+    scale: 0.95;
+}
+
+.qst-01-button-after {
+    transform: rotate(-90deg);
+}
+
+.qst-01-p {
+    color: black;
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+}
+
+.qst-01-qst-p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.qst-01-qst-p-after {
+    color: black;
+}
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.FAQ-02 {
+    height: 65px;
+    border-bottom: solid 2px black;
+    padding: 0px 10px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.FAQ-02-after {
+    height: 215px;
+}
+
+.question-02 {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.answer-02 {
+    height: 100px;
+}
+
+.qst-02-button {
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-family: arial;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: all .2s;
+}
+
+.qst-02-button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.qst-02-button:active {
+    scale: 0.95;
+}
+
+.qst-02-button-after {
+    transform: rotate(-90deg);
+}
+
+.qst-02-p {
+    color: black;
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+}
+
+.qst-02-qst-p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.qst-02-qst-p-after {
+    color: black;
+}
+
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.FAQ-03 {
+    height: 60px;
+    border-bottom: solid 2px black;
+    padding: 0px 10px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.FAQ-03-after {
+    height: 210px;
+}
+
+.question-03 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.answer-03 {
+    height: 100px;
+}
+
+.qst-03-button {
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-family: arial;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: all .2s;
+}
+
+.qst-03-button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.qst-03-button:active {
+    scale: 0.95;
+}
+
+.qst-03-button-after {
+    transform: rotate(-90deg);
+}
+
+.qst-03-p {
+    color: black;
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+}
+
+.qst-03-qst-p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.qst-03-qst-p-after {
+    color: black;
+}
+
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.FAQ-04 {
+    height: 65px;
+    border-bottom: solid 2px black;
+    padding: 0px 10px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.FAQ-04-after {
+    height: 245px;
+}
+
+.question-04 {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.answer-04 {
+    height: 130px;
+}
+
+.qst-04-button {
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-family: arial;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: all .2s;
+}
+
+.qst-04-button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.qst-04-button:active {
+    scale: 0.95;
+}
+
+.qst-04-button-after {
+    transform: rotate(-90deg);
+}
+
+.qst-04-p {
+    color: black;
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+}
+
+.qst-04-qst-p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.qst-04-qst-p-after {
+    color: black;
+}
+
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.FAQ-05 {
+    height: 60px;
+    border-bottom: solid 2px black;
+    padding: 0px 10px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.FAQ-05-after {
+    height: 240px;
+}
+
+.question-05 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.answer-05 {
+    height: 130px;
+}
+
+.qst-05-button {
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-family: arial;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: all .2s;
+}
+
+.qst-05-button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.qst-05-button:active {
+    scale: 0.95;
+}
+
+.qst-05-button-after {
+    transform: rotate(-90deg);
+}
+
+.qst-05-p {
+    color: black;
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+}
+
+.qst-05-qst-p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.qst-05-qst-p-after {
+    color: black;
+}
+
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.FAQ-06 {
+    height: 65px;
+    border-bottom: solid 2px black;
+    padding: 0px 10px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+.FAQ-06-after {
+    height: 215px;
+}
+
+.question-06 {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.answer-06 {
+    height: 100px;
+}
+
+.qst-06-button {
+    height: 45px;
+    width: 45px;
+    font-size: 16px;
+    font-family: arial;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: all .2s;
+}
+
+.qst-06-button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.qst-06-button:active {
+    scale: 0.95;
+}
+
+.qst-06-button-after {
+    transform: rotate(-90deg);
+}
+
+.qst-06-p {
+    color: black;
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+}
+
+.qst-06-qst-p {
+    color: rgba(0, 0, 0, 0.75);
+    font-family: arial;
+    font-size: 17px;
+    flex: 1;
+    line-height: 21px;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.qst-06-qst-p-after {
+    color: black;
+}
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.contact-div2 {
+    font-family: arial;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 30px;
+    background-color: white;
+    margin-top: 50px;
+}
+
+.input-group {
+ position: relative;
+ display: flex;
+}
+
+.input {
+ border: solid 2px rgb(100, 100, 100);
+ border-radius: 16px;
+ background: none;
+ padding: 16px;
+ font-size: 16px;
+ color: black;
+ transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+ flex: 1;
+}
+
+.user-label {
+ position: absolute;
+ left: 15px;
+ color: rgb(100, 100, 100);
+ pointer-events: none;
+ transform: translateY(16px);
+ transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.input:focus, input:valid {
+ outline: none;
+ border: 2px solid black;
+ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.input:focus ~ label, input:valid ~ label {
+ transform: translateY(-50%) scale(0.8);
+ background-color: white;
+ padding: 0 .2em;
+ color: black;
+}
+
+.input:hover {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.gender-select {
+    height: 55px;
+    border-radius: 16px;
+    background-color: transparent;
+    border: solid 2px rgb(100, 100, 100);
+    font-size: 16px;
+    padding: 10px;
+    transition: all 0.2s;
+}
+
+.gender-select:hover {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.gender {
+    background-color: white;
+}
+
+.message {
+     border: solid 2px rgb(100, 100, 100);
+    border-radius: 16px;
+    background: none;
+    padding: 16px;
+    font-size: 16px;
+    color: black;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    flex: 1;
+    min-height: 100px;
+    font-family: arial;
+}
+
+.message:focus, .message:valid {
+ outline: none;
+ border: 2px solid black;
+ box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.message:focus ~ label, .message:valid ~ label {
+ transform: translateY(-50%) scale(0.8);
+ background-color: white;
+ padding: 0 .2em;
+ color: black;
+}
+
+.message:hover {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.send-message-button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-message-button {
+    background-color: black;
+    height: 45px;
+    width: 150px;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.send-message-button:hover {
+    width: 200px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.send-message-button:active {
+    scale: 0.95;
+}
+
+
+
+/*OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO*/
+
+.insta-whats-main-div {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.insta-main-div {
+    border: solid 4px black;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 25px;
+    width: 250px;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.3), 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.insta-logo-div {
+    height: 80px;
+    width: 80px;
+}
+
+.insta-logo {
+    width: 100%;
+}
+
+.insta-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insta {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.whats-main-div {
+    border: solid 4px black;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 25px;
+    width: 250px;
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.3), 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.whats-logo-div {
+    height: 80px;
+    width: 80px;
+}
+
+.whats-logo {
+    width: 100%;
+}
+
+.whats-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whats {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+}

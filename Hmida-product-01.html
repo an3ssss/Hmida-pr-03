@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmida - Product</title>
+    <title>Hmida - Product - 01</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Hmida-pics/HmidaLogo.PNG">
     <link rel="stylesheet" href="Styles/Hmida.css">
-    <link rel="stylesheet" href="Styles/Hmida-Home.css">
+    <link rel="stylesheet" href="Styles/Hmida-product.css">
     <link rel="stylesheet" href="Styles/Hmida-header.css">
     <link rel="stylesheet" href="Styles/Hmida-last-div.css">
 </head>
@@ -43,6 +43,70 @@
             <a class="header-button-menu-a" href=""><button class="header-button-menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="header-button-icon-menu"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>Search</button></a>
         </div>
     </header>
+
+    <main>
+
+        <div class="products-pics-div-container">
+            <div class="product-pics-div">
+                <div class="product-pic-01-div-container">
+                    <div class="product-pic-01-div">
+                        <div class="change-pic-buttons-div">
+                            <button class="change-pic-button js-change-pic-button-left"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff"><path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z"/></svg></button>
+                            <button class="change-pic-button js-change-pic-button-right"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></button>
+                        </div>
+                        <img src="Hmida-pics/Pdt01.PNG" alt="Hmida-products-01" class="product-pic-01 js-product-main-pic-01">
+                        <img src="Hmida-pics/Pdt01.2.PNG" alt="Hmida-products-01" class="product-pic-01 js-product-main-pic-02">
+                        <img src="Hmida-pics/Pdt01.3.PNG" alt="Hmida-products-01" class="product-pic-01 js-product-main-pic-03">
+                        <img src="Hmida-pics/Pdt01.4.PNG" alt="Hmida-products-01" class="product-pic-01 js-product-main-pic-04">
+                    </div>
+                </div>
+                <div class="product-pic-02-03-04-div-container">
+                    <div class="product-pic-02-03-04-div">
+                        <img src="Hmida-pics/Pdt01.2.PNG" alt="Hmida-products-01" class="product-pic-02-03-04 js-product-pic-02">
+                    </div>
+                    <div class="product-pic-02-03-04-div">
+                        <img src="Hmida-pics/Pdt01.3.PNG" alt="Hmida-products-01" class="product-pic-02-03-04 js-product-pic-03">
+                    </div>
+                    <div class="product-pic-02-03-04-div">
+                        <img src="Hmida-pics/Pdt01.4.PNG" alt="Hmida-products-01" class="product-pic-02-03-04 js-product-pic-04">                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-main-div-02">
+            <div class="product-ordering-section">
+                <div class="product-ordering-name-price-div">
+                    <p class="product-ordering-section-p1">Hmida-Product-01</p>
+                    <p class="product-ordering-section-p1">7 900 DA</p>
+                </div>
+                <div class="size-div">
+                    <button class="size js-size-XS">XS</button>
+                    <button class="size js-size-S">S</button>
+                    <button class="size js-size-M">M</button>
+                    <button class="size js-size-L">L</button>
+                    <button class="size js-size-XL">XL</button>
+                </div>
+                <div>
+                    <p class="product-ordering-section-p2">Select the size</p>
+                </div>
+                <div class="product-ordering-add-to-cart-div">
+                    <p class="add-to-cart-warning-red js-add-to-cart-warning"></p>
+                    <button class="product-ordering-add-to-cart js-product-ordering-add-to-cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="last-lines-div">
+        <div class="last-div-line-01">
+            <span class="last-line"></span>
+        </div>
+        <div class="last-div-line-02">
+            <span class="last-line"></span>
+        </div>
+    </div>
 
     <div class="last-div-main">
         <div class="last-div-01">
@@ -83,6 +147,7 @@
         </div>
     </div>
 
+    <script src="Scripts/Hmida-product.js"></script>
     <script src="Scripts/Hmida-header.js"></script>
     
 </body>

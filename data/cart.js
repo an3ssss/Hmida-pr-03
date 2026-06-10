@@ -1,0 +1,1 @@
+export let theCart = JSON.parse(localStorage.getItem('cart')) || [];

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Hmida-pics/HmidaLogo.PNG">
     <link rel="stylesheet" href="Styles/Hmida.css">
-    <link rel="stylesheet" href="Styles/Hmida-Home.css">
+    <link rel="stylesheet" href="Styles/Hmida-cart.css">
     <link rel="stylesheet" href="Styles/Hmida-header.css">
     <link rel="stylesheet" href="Styles/Hmida-last-div.css">
 </head>
@@ -43,6 +43,49 @@
             <a class="header-button-menu-a" href=""><button class="header-button-menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="header-button-icon-menu"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>Search</button></a>
         </div>
     </header>
+
+    <main>
+        <div class="cart-main-01">
+            <div class="cart-order-summary">
+                <div class="order-summary-title-div">
+                    <p class="order-summary-title-p">Order summary</p>
+                </div>
+                <div class="order-summary-info">
+                    <div class="order-summary-p-div"><p class="order-summary-p js-items">Items (0):</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p js-total-price">0 DA</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p">Shipping & handling:</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p">0 DA</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p">Total befor tax:</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p js-total-before-tax">0 DA</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p">Estimated tax (10%):</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p js-tax">0 DA</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p">Order total:</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p js-order-total">0 DA</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
+                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
+                    <div class="order-summary-div-button"><button class="order-summary-button">Place your order</button></div>
+                    <div class="order-summary-div-button"><button class="order-summary-button js-reset-cart">Reset cart</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-main-02">
+            <div class="cart js-cart">
+                
+            </div>
+        </div>
+    </main>
+
+    <div class="last-lines-div">
+        <div class="last-div-line-01">
+            <span class="last-line"></span>
+        </div>
+        <div class="last-div-line-02">
+            <span class="last-line"></span>
+        </div>
+    </div>
+
 
     <div class="last-div-main">
         <div class="last-div-01">
@@ -83,6 +126,7 @@
         </div>
     </div>
 
+    <script type="module" src="Scripts/Hmida-cart.js"></script>
     <script src="Scripts/Hmida-header.js"></script>
     
 </body>

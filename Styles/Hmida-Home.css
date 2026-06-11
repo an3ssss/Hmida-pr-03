@@ -1,3 +1,9 @@
+.main-div01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hmida-logo-pic {
     width: 100%;
     transition: all .2s;

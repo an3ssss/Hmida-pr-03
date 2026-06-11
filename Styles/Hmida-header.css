@@ -250,4 +250,12 @@ header {
         pointer-events: none;
         scale: 0;
     }
+    .header-button-a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        pointer-events: none;
+    }
+
 }

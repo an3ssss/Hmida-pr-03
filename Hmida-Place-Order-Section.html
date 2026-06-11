@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmida - Cart</title>
+    <title>Hmida - Place - Your - Order</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Hmida-pics/HmidaLogo.PNG">
     <link rel="stylesheet" href="Styles/Hmida.css">
-    <link rel="stylesheet" href="Styles/Hmida-cart.css">
+    <link rel="stylesheet" href="Styles/Hmida-place-order-section.css">
     <link rel="stylesheet" href="Styles/Hmida-header.css">
     <link rel="stylesheet" href="Styles/Hmida-last-div.css">
 </head>
@@ -45,40 +45,55 @@
         </div>
     </header>
 
-    <main>
-        <div class="cart-main-01">
-            <div class="cart-order-summary">
-                <div class="order-summary-title-div">
-                    <p class="order-summary-title-p">Order summary</p>
-                </div>
-                <div class="order-summary-info">
-                    <div class="order-summary-p-div"><p class="order-summary-p js-items">Items (0):</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-total-price">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Shipping & handling:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-shipping-and-handling">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Total befor tax:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-total-before-tax">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Estimated tax (10%):</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-tax">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Order total:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-order-total">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-div-button"><a href="Hmida-Place-Order-Section.html" class="place-your-order-link"><button class="order-summary-button">Place your order</button></a></div>
-                    <div class="order-summary-div-button"><button class="order-summary-button js-reset-cart">Reset cart</button></div>
-                </div>
+    <main class="js-main">
+        <div class="ordering-info-main">
+            <div class="customer-info-title-div">
+                <p class="customer-info-title-p">Customer info</p>
             </div>
-        </div>
-        <div class="cart-main-02">
-            <div class="cart js-cart">
-                
+            <div class="input-group">
+                <input required="" type="text" name="name" autocomplete="on" class="input js-customer-full-name">
+                <label class="user-label">First and last name</label>
+                <p class="js-customer-full-name-warning info-warning"></p>
             </div>
+            <div class="input-group">
+                <input required="" type="number" name="tel" autocomplete="on" class="input js-customer-number">
+                <label class="user-label">Phone number</label>
+                <p class="js-customer-number-warning info-warning"></p>
+            </div>
+            <div class="input-group">
+                <input required="" type="text" name="email" autocomplete="on" class="input js-customer-email">
+                <label class="user-label">Email address</label>
+                <p class="js-customer-email-warning info-warning"></p>
+            </div>
+            <div class="wilaya-select-div">
+                <select class="wilaya-select js-wilaya-select" required>
+                </select>
+                <p class="js-customer-state-warning info-warning"></p>
+            </div>
+            <div class="wilaya-select-div">
+                <select class="wilaya-select js-communes-select" required>
+                </select>
+                <p class="js-customer-commune-warning info-warning"></p>
+            </div>
+            <div class="input-group">
+                <input required="" type="text" name="street-address" autocomplete="on" class="input js-customer-address">
+                <label class="user-label">Address</label>
+                <p class="js-customer-address-warning info-warning"></p>
+            </div>
+            <div>
+                <div class="input-group">
+                    <textarea required="" type="text" name="text" autocomplete="off" class="js-note note" maxlength="300"></textarea>
+                    <label class="user-label">Note...</label>
+                </div> 
+                <p class="length-counter js-length-counter" style="text-align: end;padding-right: 10px;">0/300</p>
+            </div> 
+            <div class="confirm-info-button-div">
+                <button class="confirm-info-button js-confirm-info">Confirm</button>
+            </div>  
         </div>
     </main>
 
-    <div class="last-lines-div">
+        <div class="last-lines-div">
         <div class="last-div-line-01">
             <span class="last-line"></span>
         </div>
@@ -86,7 +101,6 @@
             <span class="last-line"></span>
         </div>
     </div>
-
 
     <div class="last-div-main">
         <div class="last-div-01">
@@ -127,8 +141,9 @@
         </div>
     </div>
 
-    <script type="module" src="Scripts/Hmida-cart.js"></script>
+    <script type="module" src="Scripts/Hmida-place-order-section.js"></script>
     <script src="Scripts/Hmida-header.js"></script>
-    
+
+
 </body>
 </html>

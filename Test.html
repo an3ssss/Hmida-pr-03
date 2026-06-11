@@ -54,50 +54,22 @@
 </head>
 <body>
 
-    <button class="add js-add">Add</button>
-    <div class="container js-container">
-        <div class="box">
-            <button class="delete js-delete">Delete</button>
-        </div>
-    </div>
-
+    
     <script>
 
-        let cart = [];
+        const now = new Date();
 
-        document.querySelector('.js-add')
-          .addEventListener('click', () => {
-             addToCart();
-          })
+        // Extract components
+        const year = now.getFullYear();
+        const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
+        const day = now.getDate().toString().padStart(2, '0');
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
 
-        function addToCart() {
-            cart.push({
-                name: 'box'
-            })
-            console.log(cart);
-            displayCart();
-        }
-
-        displayCart();
-
-        function displayCart() {
-            let cartHtml = '';
-            cart.forEach(() => {
-                let html = `<div class="box">
-                                <button class="delete js-delete">Delete</button>
-                            </div>`;
-                cartHtml += html;
-            })
-            document.querySelector('.js-container').innerHTML = cartHtml;
-            document.querySelectorAll('.js-delete')
-                .forEach((button, i) => {
-                    button.addEventListener('click', () => {
-                        console.log(cart)
-                        cart.splice(i, 1);
-                        displayCart();
-                    })
-                })
-        }
+        // Format as YYYY-MM-DD HH:MM:SS
+        const dateTimeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        console.log(dateTimeString);   
 
     </script>
 

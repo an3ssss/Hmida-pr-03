@@ -131,7 +131,15 @@ btn06.addEventListener('click', () => {
 
 let message = document.querySelector('.js-message');
 
-message.addEventListener('keydown',() => {
-    console.log(message.value.length);
-    document.querySelector('.js-lentgh-counter').innerHTML = `${message.value.length}/300`;
+message.addEventListener('input',() => {
+    let messageLength = message.value.length;
+    document.querySelector('.js-length-counter').innerHTML = `${messageLength}/300`;
+    if (messageLength === 300) {
+        document.querySelector('.js-length-counter').classList.add('max-length')
+    }
+    else {
+        document.querySelector('.js-length-counter').classList.remove('max-length');
+    }
   })
+
+

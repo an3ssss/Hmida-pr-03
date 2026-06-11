@@ -59,6 +59,15 @@ main {
     margin-top: 20px;
 }
 
+.place-your-order-link {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
 .order-summary-button {
     height: 45px;
     flex: 1;

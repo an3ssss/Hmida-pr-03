@@ -1,6 +1,7 @@
 import { theCart as cart } from "../data/cart.js";
 
 displayCartProducts();
+displayOrderSummary();
 
 function displayCartProducts() {
     if (cart.length === 0) {
@@ -26,14 +27,14 @@ function displayCartProducts() {
         let cartHtml = `<div class="order-summary-title-div">
                             <p class="order-summary-title-p">Cart</p>
                         </div>`;
-        cart.forEach(() => {
+        cart.forEach((product) => {
             let html = `<div class="cart-item">
                             <div class="cart-item-div01">
-                                <img src="Hmida-pics/Pdt01.PNG" alt="Cart-item" class="cart-item-pic">
+                                <img src="${product.img}" alt="Cart-item" class="cart-item-pic">
                             </div>
                             <div class="cart-item-div02">
-                                <p class="cart-item-p">Hmida-product-01</p>
-                                <p class="cart-item-p">7 900 DA</p>
+                                <p class="cart-item-p">${product.name}</p>
+                                <p class="cart-item-p">${product.price} DA</p>
                             </div>
                             <div class="cart-item-div03">
                                 <button class="delete-button js-delete-button">Delete</button>
@@ -48,15 +49,52 @@ function displayCartProducts() {
                     cart.splice(i, 1);
                     localStorage.setItem('cart', JSON.stringify(cart));
                     displayCartProducts();
+                    displayOrderSummary();
                 })
             })
     }
+}
+
+function displayOrderSummary() {
+
+    let itemsElement = document.querySelector('.js-items');
+    let totalPriceElement = document.querySelector('.js-total-price');
+    let shippingAndhandlingElement = document.querySelector('.js-shipping-and-handling');
+    let totalBeforeTaxElement = document.querySelector('.js-total-before-tax');
+    let taxElement = document.querySelector('.js-tax');
+    let orderTotalElement = document.querySelector('.js-order-total');
+
+    let items = cart.length;
+    let totalPrice = 0;
+    cart.forEach((product) => {
+        let price = product.price;
+        totalPrice += price;
+    })
+    let shippingAndhandling = 0;
+    if (items === 0) {
+        shippingAndhandling = 0;
+    }
+    else if (items !== 0) {
+        shippingAndhandling = 850;
+    }
+    let totalBeforeTax = totalPrice + shippingAndhandling;
+    let tax = totalBeforeTax / 10;
+    let orderTotal = totalBeforeTax + tax;
+
+    itemsElement.innerHTML = `Items: (${items})`;
+    totalPriceElement.innerHTML = `${totalPrice} DA`;
+    shippingAndhandlingElement.innerHTML = `${shippingAndhandling} DA`;
+    totalBeforeTaxElement.innerHTML = `${totalBeforeTax} DA`;
+    taxElement.innerHTML = `${tax} DA`;
+    orderTotalElement.innerHTML = `${orderTotal} DA`;
+    
 }
 
 function resetCart() {
     cart.length = 0;
     localStorage.removeItem('cart');
     displayCartProducts();
+    displayOrderSummary();
 }
 
 document.querySelector('.js-reset-cart')

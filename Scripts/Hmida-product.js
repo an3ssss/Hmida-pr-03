@@ -1,3 +1,6 @@
+import * as productsModule from '../data/products.js';
+import { theCart as cart } from "../data/cart.js";
+
 let productPic01 = document.querySelector('.js-product-main-pic-01');
 let productPic02 = document.querySelector('.js-product-main-pic-02');
 let productPic03 = document.querySelector('.js-product-main-pic-03');
@@ -246,9 +249,28 @@ document.querySelector('.js-size-XL')
 
 // OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
-function addToCartButtonUnableClicking() {
-    let buttonAddToCart = document.querySelector('.js-product-ordering-add-to-cart');
-    if (buttonAddToCart) {
+let product01 = productsModule.products[0];
+let product02 = productsModule.products[1];
+let product03 = productsModule.products[2];
+
+function addToCartButtonUnableClicking(product) {
+    let buttonAddToCart;
+    if (product === product01) {
+        buttonAddToCart = document.querySelector('.js-product-ordering-add-to-cart-01');
+        buttonAddToCart.classList.add('product-ordering-add-to-cart-unable-clicking');    
+        setTimeout(() => {
+            buttonAddToCart.classList.remove('product-ordering-add-to-cart-unable-clicking');
+        }, 2000);
+    }
+    else if (product === product02) {
+        buttonAddToCart = document.querySelector('.js-product-ordering-add-to-cart-02');
+        buttonAddToCart.classList.add('product-ordering-add-to-cart-unable-clicking');    
+        setTimeout(() => {
+            buttonAddToCart.classList.remove('product-ordering-add-to-cart-unable-clicking');
+        }, 2000);
+    }
+    else if (product === product03) {
+        buttonAddToCart = document.querySelector('.js-product-ordering-add-to-cart-03');
         buttonAddToCart.classList.add('product-ordering-add-to-cart-unable-clicking');    
         setTimeout(() => {
             buttonAddToCart.classList.remove('product-ordering-add-to-cart-unable-clicking');
@@ -256,7 +278,7 @@ function addToCartButtonUnableClicking() {
     }
 }
 
-function addToCart() {
+function addToCartWarning() {
     let warning = document.querySelector('.js-add-to-cart-warning');
     if (!sizeSelected) {
         warning.innerHTML = '';
@@ -282,8 +304,61 @@ function addToCart() {
     }
 }
 
-document.querySelector('.js-product-ordering-add-to-cart')
-  .addEventListener('click', () => {
-    addToCart();
-    addToCartButtonUnableClicking();
-  })
+function addProductToCart(product) {
+    cart.push({
+        name: product.name,
+        price: product.price,
+        img: product.img01,
+        size: sizeSelected
+    });
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
+function addToCart(product) {
+    if (!sizeSelected) {
+        addToCartWarning();
+        addToCartButtonUnableClicking(product);
+        return 0;
+    }
+    else if (sizeSelected) {
+        addToCartWarning();
+        addToCartButtonUnableClicking(product);
+        addProductToCart(product);
+        console.log(cart);
+    }
+}
+
+try {
+    document.querySelector('.js-product-ordering-add-to-cart-01')
+        .addEventListener('click', () => {
+            addToCart(product01);
+    })
+}
+catch {
+    console.log('ok');
+}
+
+try {
+    document.querySelector('.js-product-ordering-add-to-cart-02')
+        .addEventListener('click', () => {
+            addToCart(product02);
+    })
+}
+catch {
+    console.log('ok');
+}
+
+try {
+    document.querySelector('.js-product-ordering-add-to-cart-03')
+        .addEventListener('click', () => {
+            addToCart(product03);
+    })
+}
+catch {
+    console.log('ok');
+}
+
+console.log(cart);
+
+

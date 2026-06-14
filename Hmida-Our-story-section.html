@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmida - Cart</title>
+    <title>Hmida - Our - Story</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Hmida-pics/HmidaLogo.PNG">
     <link rel="stylesheet" href="Styles/Hmida.css">
-    <link rel="stylesheet" href="Styles/Hmida-cart.css">
+    <link rel="stylesheet" href="Styles/Hmida-our-store-section.css">
     <link rel="stylesheet" href="Styles/Hmida-header.css">
     <link rel="stylesheet" href="Styles/Hmida-last-div.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
 
@@ -45,45 +46,29 @@
         </div>
     </header>
 
-    <main class="main-entring">
-        <div class="cart-main-01">
-            <div class="cart-order-summary">
-                <div class="order-summary-title-div">
-                    <p class="order-summary-title-p">Order summary</p>
-                </div>
-                <div class="order-summary-info">
-                    <div class="order-summary-p-div"><p class="order-summary-p js-items">Items (0):</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-total-price">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Shipping & handling:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-shipping-and-handling">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Total befor tax:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-total-before-tax">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Estimated tax (0%):</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-tax">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Order total:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-order-total">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-div-button"><button class="order-summary-button js-place-order">Place your order</button></div>
-                    <div class="order-summary-div-button"><button class="order-summary-button js-reset-cart">Reset cart</button></div>
-                </div>
-            </div>
+    <main>
+        <div class="our-store-lottie-div" style="padding: 80px 0px;">
+            <dotlottie-player 
+                src="Lottie/our-story-lottie.json" 
+                background="transparent" 
+                speed="1" 
+                class="lottie"
+                loop 
+                autoplay>
+            </dotlottie-player>
         </div>
-        <div class="cart-main-02">
-            <div class="cart js-cart">
-                
-            </div>
+        <div class="our-store-paragraph-div">
+            <p class="our-store-paragraph">No storefront. No compromises.
+                 Just an obsession with the aesthetic.
+                  We are a creative project committed 
+                  to building an identity that speaks 
+                  for itself. We don't operate in the physical 
+                  retail space because our focus lies entirely
+                   on the craft and the message behind it. Welcome 
+                   to our world—the only place you'll ever find us</p>
         </div>
     </main>
 
-    <div class="empty-cart-warning-main-div">
-        <div class="empty-cart-warning-div">
-            <svg xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px" fill="#fff" style="transform: translateY(-1px);"><path d="M508.5-291.5Q520-303 520-320t-11.5-28.5Q497-360 480-360t-28.5 11.5Q440-337 440-320t11.5 28.5Q463-280 480-280t28.5-11.5ZM440-440h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            <p class="empty-cart-warning-red js-empty-cart-warning">The cart is empty</p>
-        </div>
-    </div>
 
     <div class="last-lines-div">
         <div class="last-div-line-01">
@@ -93,7 +78,6 @@
             <span class="last-line"></span>
         </div>
     </div>
-
 
     <div class="last-div-main">
         <div class="last-div-01">
@@ -134,7 +118,7 @@
         </div>
     </div>
 
-    <script type="module" src="Scripts/Hmida-cart.js"></script>
+
     <script src="Scripts/Hmida-header.js"></script>
     
 </body>

@@ -1,0 +1,59 @@
+main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+    opacity: 0;
+    scale: 0.95;
+    animation: entering 0.2s ease 0.5s forwards;
+}
+
+@keyframes entering {
+    from {
+        scale: 0.95;
+        opacity: 0;
+    }
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.our-store-lottie-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    border: solid 2px black;
+    border-radius: 25px;
+    transition: all 0.2s;
+}
+
+.our-store-lottie-div:active {
+    scale: 0.99;
+}
+
+.lottie {
+    width: 100%;
+    height: auto;
+}
+
+.our-store-paragraph-div {
+    background-color: rgb(230, 230, 230);
+    padding: 0px 10px;
+    border: solid 2px black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+.our-store-paragraph {
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}

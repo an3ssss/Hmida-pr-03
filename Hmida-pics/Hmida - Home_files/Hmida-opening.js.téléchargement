@@ -1,0 +1,20 @@
+function lockScroll() {
+    document.documentElement.classList.add('no-scroll');
+    console.log('locked');
+}
+
+function unlockScroll() {
+    document.documentElement.classList.remove('no-scroll');
+    console.log('unlocked');
+}
+
+window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+});
+
+lockScroll();
+
+setTimeout(() => {
+    unlockScroll();
+}, 3000);

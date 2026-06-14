@@ -14,39 +14,7 @@ header {
     transition: all 0.3s;
     overflow: hidden;
     z-index: 1000;
-    opacity: 0;
-}
-
-.normal-header {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    height: 80px;
-    border: none;
-    border-radius: 15px;
-    background-color: black;
-    box-shadow: 0px 0px 20px black;
-    display: flex;
-    flex-direction: column;
-    padding: 0px 15px;
-    transition: all 0.3s;
-    overflow: hidden;
-    z-index: 1000;
-    opacity: 1;
-}
-
-.animated-header {
-    animation: openingHeader 0.4s ease 3.18s forwards;
-}
-
-@keyframes openingHeader {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    opacity: 0.95;
 }
 
 .menu {

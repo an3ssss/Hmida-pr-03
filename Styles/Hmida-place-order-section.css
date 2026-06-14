@@ -127,13 +127,13 @@ main {
     font-family: arial;
 }
 
-.note:focus, .message:valid {
+.note:focus, .note:valid {
  outline: none;
  border: 2px solid black;
  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
-.note:focus ~ label, .message:valid ~ label {
+.note:focus ~ label, .note:valid ~ label {
  transform: translateY(-50%) scale(0.8);
  background-color: white;
  padding: 0 .2em;
@@ -243,3 +243,713 @@ main {
     }
 }
 
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.body {
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-lottie-main {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.no-opacity {
+    opacity: 0;
+}
+
+.opacity {
+    opacity: 1;
+}
+
+.loading-lottie-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-lottie {
+    width: 60%;
+}
+
+.lottie-text {
+    font-size: 40px;
+    font-family: arial;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    margin: 0px;
+}
+
+.disappear {
+    animation: disappear .2s ease forwards;
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.appear {
+    animation: appear .2s ease forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.orders {
+    background-color: lightblue;
+    position: relative;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.page-buttons-div {
+    position: absolute;
+    background-color: grey;
+    top: 0px;
+    left: 10px;
+    right: 10px;
+    height: 60px;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 1);
+}
+
+.page-button-01 {
+    flex: 1;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    margin-right: -3.5%;
+    border: solid 2px grey;
+    border-radius: 30px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    transition: all 0.2s;
+    background-color: white;
+    font-size: 16px;
+    font-family: arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.page-button-01:active {
+    scale: 0.95;
+}
+
+.page-button-02 {
+    flex: 1;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -3.5%;
+    border: solid 2px grey;
+    border-radius: 30px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    transition: all 0.2s;
+    background-color: white;
+    font-size: 16px;
+    font-family: arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.page-button-02:active {
+    scale: 0.95;
+}
+
+.orders-page-01 {
+    background-color: lightsalmon;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    right: 10px;
+    min-height: 100%;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.orders-page-02 {
+    background-color: lightseagreen;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    right: 10px;
+    min-height: 100%;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.page-showen {
+    z-index: 20;
+}
+
+.unable-clicking {
+    pointer-events: none;
+}
+
+.page-01-products {
+    min-height: 150px;
+    border: solid 2px black;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightpink;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-02-main-container {
+    min-height: 300px;
+    border: solid 2px black;
+    background-color: lightgreen;
+    overflow: hidden;
+}
+
+.page-02-container {
+    transform: translateY(-45px);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    gap: 30px;
+    background-color: lightblue;
+}
+
+.order-top-info {
+    margin: 0px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.product {
+    border: solid 2px black;
+    min-height: 100px;
+    display: flex;
+    padding: 5px;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: lightseagreen;
+}
+
+.product-pic-div {
+    flex: 1;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.product-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    outline: solid 2px black;
+}
+
+.product-info-div {
+    flex: 1;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 2px;
+}
+
+.product-info {
+    font-family: arial;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(70, 70, 70);
+    margin: 0px;
+}
+
+.product-price-div {
+    flex: 1;
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-price {
+    font-family: arial;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    font-size: 15px;
+    margin: 0px;
+    margin-bottom: 15px;
+}
+
+.page-01-customer-order-info {
+    min-height: 300px;
+    border: solid 2px black;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgreen;
+    border-radius: 25px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+.page-01-customer-order-info-title {
+    font-family: arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.customer-order-info {
+    font-family: arial;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
+    min-width: 100vw;
+    overflow: hidden;
+}
+
+.page-01-customer-payment-methode {
+    min-height: 150px;
+    border: solid 2px black;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightcyan;
+    border-radius: 25px;
+}
+
+.payment-method {
+    font-family: arial;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: rgb(70, 70, 70); 
+}
+
+.payment-input {
+    height: 20px;
+    width: 20px;
+    box-shadow: 0px 0px 0px white;
+    background-color: transparent;
+    border: none;
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.payment-input:active, input:valid {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.confirm-order-div {
+    min-height: 300px;
+    border: solid 2px black;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightyellow;
+    border-radius: 25px;
+}
+
+.confirm-order-grid {
+    background-color: lwhite;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+
+.confirm-order-p-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-order-p {
+    font-family: arial;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: rgb(30, 30, 30); 
+    text-align: center;
+}
+
+.confirm-order-buttons-div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.confirm-order-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+    border: none;
+    height: 45px;
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    transition: all .2s;
+}
+
+.confirm-order-button:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+.confirm-order-button:active {
+    scale: 0.98;
+}
+
+.cancel-order-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+    border: solid 2px black;
+    height: 45px;
+    border-radius: 15px;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    transition: all .2s;
+}
+
+.cancel-order-button:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+.cancel-order-button:active {
+    scale: 0.98;
+}
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.confirm-order-warning-main {
+    position: fixed;
+    bottom: -120px;
+    left: 0px;
+    right: 0px;
+    padding: 30px 10px;
+    background-color: transparent;
+    transition: all 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.confirm-order-warning-box {
+    flex: 1;
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.confrim-order-warning-p {
+    color: white;
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+}
+
+.confirm-order-warning-animation {
+    animation: confirmOrderWarningAnimation 2s ease;
+}
+
+@keyframes confirmOrderWarningAnimation {
+    0% {
+        opacity: 0;
+        bottom: -120px;
+    }
+    20% {
+        opacity: 1;
+        bottom: 0px;
+    }
+    80% {
+        opacity: 1;
+        bottom: 0px;
+    }
+    100% {
+        opacity: 0;
+        bottom: -120px;
+    }
+}
+
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+
+.confirmed-orders-container {
+    min-height: 300px;
+    border: solid 2px black;
+    margin: 10px;
+    background-color: lightgreen;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+.confirmed-order {
+    background-color: lightsalmon;
+    min-height: 300px;
+    border: solid 2px black;
+    border-radius: 25px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+.confirmed-order-main-info {
+    margin: 0px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.order-confirmed-customer-info {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-confirmed-customer-info-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0px;
+    padding: 10px 0px;
+}
+
+.order-confirmed-customer-info-p {
+    font-family: arial;
+    text-align: center;
+    color: rgb(70, 70, 70);
+    margin: 0px;
+    font-weight: 600;
+}
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.epmty-orders-main {
+    min-height: 300px;
+    background-color: lightgreen;
+    padding: 30px;
+    border: solid 2px black;
+    border-radius: 25px;
+}
+
+.empty-orders-icon-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcoral;
+}
+
+.empty-order-icon {
+    width: 90%;
+    height: auto;
+    fill: rgb(110, 110, 110);
+}
+
+.empty-order-p {
+    text-align: center;
+    font-family: arial;
+    font-weight: 700;
+    font-size: 30px;
+    color: rgb(70, 70, 70);
+    margin: 0px;
+}
+
+.return-to-shop-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.return-to-shop-link {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.return-to-shop {
+    margin: 20px 0px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    height: 45px;
+    min-width: 150px;
+    flex: 1;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    transition: all .2s;
+}
+
+.return-to-shop:hover {
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.8);
+}
+
+.return-to-shop:active {
+    scale: 0.98;
+}
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.confirm-canceling-order-main {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.confirm-canceling-order-main-after {
+    pointer-events: all;
+}
+
+
+.confirm-canceling-order-box {
+    min-height: 250px;
+    width: 90vw;
+    background-color: white;
+    border: solid 3px black;
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.confirm-canceling-order-inner-box {
+    background-color: white;
+    border: solid 3px black;
+    border-radius: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 5px;
+}
+
+.confirm-canceling-order-p {
+    font-family: arial;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.confirm-canceling-order-button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 30px;
+}
+
+.confirm-canceling-order-button-sure {
+    flex: 1;
+    height: 45px;
+    font-family: arial;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+.confirm-canceling-order-button-sure:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.confirm-canceling-order-button-sure:active {
+    scale: 0.99;
+}
+
+.confirm-canceling-order-button-not-sure {
+    flex: 1;
+    height: 45px;
+    font-family: arial;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+.confirm-canceling-order-button-not-sure:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.confirm-canceling-order-button-not-sure:active {
+    scale: 0.99;
+}

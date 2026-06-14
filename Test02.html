@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmida - Cart</title>
+    <title>Hmida - Place - Your - Order</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Hmida-pics/HmidaLogo.PNG">
     <link rel="stylesheet" href="Styles/Hmida.css">
-    <link rel="stylesheet" href="Styles/Hmida-cart.css">
+    <link rel="stylesheet" href="Styles/Hmida-place-order-section.css">
     <link rel="stylesheet" href="Styles/Hmida-header.css">
     <link rel="stylesheet" href="Styles/Hmida-last-div.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
-
-    <header class="js-header normal-header">
+<!--body-->
+    <header class="js-header">
         <div class="header-01">
             <div class="header-div01">
                 <div class="header-div01-01">
@@ -45,97 +46,29 @@
         </div>
     </header>
 
-    <main class="main-entring">
-        <div class="cart-main-01">
-            <div class="cart-order-summary">
-                <div class="order-summary-title-div">
-                    <p class="order-summary-title-p">Order summary</p>
-                </div>
-                <div class="order-summary-info">
-                    <div class="order-summary-p-div"><p class="order-summary-p js-items">Items (0):</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-total-price">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Shipping & handling:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-shipping-and-handling">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Total befor tax:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-total-before-tax">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Estimated tax (0%):</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-tax">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p">Order total:</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p js-order-total">0 DA</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-p-div"><p class="order-summary-p" style="margin: 5px;">------------------------</p></div>
-                    <div class="order-summary-div-button"><button class="order-summary-button js-place-order">Place your order</button></div>
-                    <div class="order-summary-div-button"><button class="order-summary-button js-reset-cart">Reset cart</button></div>
-                </div>
+    <!--main 2-->
+
+    <main class="js-main">
+        <div class="orders">
+            <div class="page-buttons-div">
+                <button class="page-button-01 js-page-button-01"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff" style="transform: translateY(-2px);"><path d="m480-560-56-56 63-64H320v-80h167l-64-64 57-56 160 160-160 160ZM223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg>Checkout</button>
+                <button class="page-button-02 js-page-button02"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff" style="transform: translateY(-2px);"><path d="M480-120q-138 0-240.5-91.5T122-440h82q14 104 92.5 172T480-200q117 0 198.5-81.5T760-480q0-117-81.5-198.5T480-760q-69 0-129 32t-101 88h110v80H120v-240h80v94q51-64 124.5-99T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/></svg>Order History</button>
             </div>
-        </div>
-        <div class="cart-main-02">
-            <div class="cart js-cart">
+            <div class="orders-page-02">
                 
-            </div>
+            </div>         
         </div>
     </main>
 
-    <div class="empty-cart-warning-main-div">
-        <div class="empty-cart-warning-div">
+   <div class="confirm-order-warning-main js-confirm-order-warning-main">
+        <div class="confirm-order-warning-box">
             <svg xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 -960 960 960" width="29px" fill="#fff" style="transform: translateY(-1px);"><path d="M508.5-291.5Q520-303 520-320t-11.5-28.5Q497-360 480-360t-28.5 11.5Q440-337 440-320t11.5 28.5Q463-280 480-280t28.5-11.5ZM440-440h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            <p class="empty-cart-warning-red js-empty-cart-warning">The cart is empty</p>
+             <p class="confrim-order-warning-p">No payment method selected</p>
         </div>
-    </div>
+   </div>
 
-    <div class="last-lines-div">
-        <div class="last-div-line-01">
-            <span class="last-line"></span>
-        </div>
-        <div class="last-div-line-02">
-            <span class="last-line"></span>
-        </div>
-    </div>
-
-
-    <div class="last-div-main">
-        <div class="last-div-01">
-            <p class="last-div-title-p">Support</p>
-            <a href="Hmida-Contact.html" class="last-div-link">Contact</a>
-            <a href="" class="last-div-link">My account</a>
-            <a href="Hmida-Delivery-section.html" class="last-div-link">Delevery</a>
-            <a href="Hmida-Contact.html" class="last-div-link">FAQ</a>
-        </div>
-        <div class="last-div-02">
-            <p class="last-div-title-p">About us</p>
-            <a href="Hmida-Our-store-section.html" class="last-div-link">Our store</a>
-            <a href="Hmida-Our-story-section.html" class="last-div-link">Our story</a>
-            <a href="" class="last-div-link">Authenticity Products</a>
-            <a href="" class="last-div-link">Loyalty</a>
-            <a href="" class="last-div-link">Program Gift Card</a>
-        </div>
-        <div class="last-div-03">
-            <p class="last-div-title-p">Log in to the website</p>
-            <div class="log-in-bar-container">
-                <input type="email" class="log-in-bar" placeholder="youremail@examle.com">
-            </div>
-            <p class="email-password-p">Email address</p>
-            <div class="log-in-bar-container">
-                <input type="password" class="log-in-bar" placeholder="Password">
-            </div>
-            <p class="email-password-p">Password</p>
-            <div class="forgot-password-div">
-                <div class="remember-me-div">
-                    <input type="checkbox" class="remeber-me-input">
-                    <p class="remember-me-p">Remember me</p>
-                </div>
-                <p class="forgot-password-p">Forgot your password ?</p>
-            </div>
-            <div class="sign-in-button-container">
-                <button class="sign-in-button">Sign in</button>
-            </div>
-        </div>
-    </div>
-
-    <script type="module" src="Scripts/Hmida-cart.js"></script>
     <script src="Scripts/Hmida-header.js"></script>
-    
+
+
 </body>
 </html>

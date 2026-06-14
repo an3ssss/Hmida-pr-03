@@ -223,3 +223,63 @@ main {
 .empty-cart-button:active {
     scale: 0.98;
 }
+
+/* OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.empty-cart-warning-main-div {
+    padding: 30px;
+    z-index: 1000;
+    pointer-events: none;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: -100px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.empty-cart-warning-div {
+    flex: 1;
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.empty-cart-warning-red {
+    color: white;
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+}
+
+.empty-cart-warning-animation {
+    animation: emptyCartWaringAnimation 2s ease;
+}
+
+@keyframes emptyCartWaringAnimation {
+    0% {
+        opacity: 0;
+        bottom: -100px;
+    }
+    20% {
+        opacity: 1;
+        bottom: 0px;
+    }
+    80% {
+        opacity: 1;
+        bottom: 0px;
+    }
+    100% {
+        opacity: 0;
+        bottom: -100px;
+    }
+}
+
+.place-order-unable-clicking {
+    pointer-events: none;
+}

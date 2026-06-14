@@ -4,74 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
-    <style>
-        .add {
-            height: 45px;
-            width: 100px;
-            background-color: white;
-            color: black;
-            border: solid 2px black;
-            border-radius: 15px;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-            margin-left: 20px;
-        }
-        .add:active {
-            scale: 0.95;
-        }
-        .container {
-            height: 500px;
-            width: 250px;
-            border: solid 2px black;
-            border-radius: 15px;
-            margin: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            gap: 10px;
-        }
-        .box {
-            background-color: rgba(0, 0, 0, 0.2);
-            height: 100px;
-            width: 250px;
-            border: solid 2px black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .delete {
-            border: none;
-            background-color: black;
-            color: white;
-            width: 100px;
-            height: 45px;
-            border-radius: 15px;
-        }
-        .delete:active {
-            scale: 0.95;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <style>
+        
+    </style>
+
     
-    <script>
-
-        const now = new Date();
-
-        // Extract components
-        const year = now.getFullYear();
-        const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
-        const day = now.getDate().toString().padStart(2, '0');
-        const hours = now.getHours().toString().padStart(2, '0');
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const seconds = now.getSeconds().toString().padStart(2, '0');
-
-        // Format as YYYY-MM-DD HH:MM:SS
-        const dateTimeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-        console.log(dateTimeString);   
-
-    </script>
 
 </body>
 </html>

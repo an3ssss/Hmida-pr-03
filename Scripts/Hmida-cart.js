@@ -1,4 +1,7 @@
 import { theCart as cart } from "../data/cart.js";
+import { orders } from "../data/orders.js";
+
+let totalPrice = 0;
 
 displayCartProducts();
 displayOrderSummary();
@@ -65,7 +68,6 @@ function displayOrderSummary() {
     let orderTotalElement = document.querySelector('.js-order-total');
 
     let items = cart.length;
-    let totalPrice = 0;
     cart.forEach((product) => {
         let price = product.price;
         totalPrice += price;
@@ -78,7 +80,7 @@ function displayOrderSummary() {
         shippingAndhandling = 850;
     }
     let totalBeforeTax = totalPrice + shippingAndhandling;
-    let tax = totalBeforeTax / 10;
+    let tax = 0;
     let orderTotal = totalBeforeTax + tax;
 
     itemsElement.innerHTML = `Items: (${items})`;
@@ -94,10 +96,88 @@ function resetCart() {
     cart.length = 0;
     localStorage.removeItem('cart');
     displayCartProducts();
-    displayOrderSummary();
+
+    let itemsElement = document.querySelector('.js-items');
+    let totalPriceElement = document.querySelector('.js-total-price');
+    let shippingAndhandlingElement = document.querySelector('.js-shipping-and-handling');
+    let totalBeforeTaxElement = document.querySelector('.js-total-before-tax');
+    let taxElement = document.querySelector('.js-tax');
+    let orderTotalElement = document.querySelector('.js-order-total');
+
+    itemsElement.innerHTML = `Items: (0)`;
+    totalPriceElement.innerHTML = `0 DA`;
+    shippingAndhandlingElement.innerHTML = `0 DA`;
+    totalBeforeTaxElement.innerHTML = `0 DA`;
+    taxElement.innerHTML = `0 DA`;
+    orderTotalElement.innerHTML = `0 DA`;
 }
 
 document.querySelector('.js-reset-cart')
   .addEventListener('click', () => {
     resetCart();
   })
+
+function placeOrder() {
+
+    if (!cart.length) {
+        let waringContainer = document.querySelector('.empty-cart-warning-main-div');
+        let warningBox = document.querySelector('.empty-cart-warning-div');
+        waringContainer.classList.add('empty-cart-warning-animation');
+        document.querySelector('.js-place-order').classList.add('place-order-unable-clicking');
+        setTimeout(() => {
+            waringContainer.classList.remove('empty-cart-warning-animation');
+            document.querySelector('.js-place-order').classList.remove('place-order-unable-clicking');
+        }, 2000)
+    }
+
+    else {
+
+        let now = new Date();
+    
+        let year = now.getFullYear();
+        let month = (now.getMonth() + 1).toString().padStart(2, '0');
+        let day = now.getDate().toString().padStart(2, '0');
+        let hours = now.getHours().toString().padStart(2, '0');
+        let minutes = now.getMinutes().toString().padStart(2, '0');
+
+        let orderTime = `${year}/${month}/${day} ${hours}:${minutes}`;
+
+        orders.push({
+            orderTime: orderTime,
+            order: cart,
+            orderPrice: totalPrice
+        })
+
+        localStorage.setItem('orders', JSON.stringify(orders));
+
+        resetCart();
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        
+
+        displayCartProducts();
+
+        let itemsElement = document.querySelector('.js-items');
+        let totalPriceElement = document.querySelector('.js-total-price');
+        let shippingAndhandlingElement = document.querySelector('.js-shipping-and-handling');
+        let totalBeforeTaxElement = document.querySelector('.js-total-before-tax');
+        let taxElement = document.querySelector('.js-tax');
+        let orderTotalElement = document.querySelector('.js-order-total');
+
+        itemsElement.innerHTML = `Items: (0)`;
+        totalPriceElement.innerHTML = `0 DA`;
+        shippingAndhandlingElement.innerHTML = `0 DA`;
+        totalBeforeTaxElement.innerHTML = `0 DA`;
+        taxElement.innerHTML = `0 DA`;
+        orderTotalElement.innerHTML = `0 DA`;
+
+        window.location.href = "Hmida-Place-Order-Section.html";
+        
+    }
+    
+
+}
+
+document.querySelector('.js-place-order').addEventListener('click', () => {placeOrder();});
+
+console.log(orders);

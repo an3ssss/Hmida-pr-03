@@ -143,6 +143,8 @@ input {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 10000;
     backdrop-filter: blur(10px);
+    will-change: backdrop-filter;
+    transform: translateZ(0);
     pointer-events: auto;
     animation: opening 1s ease 3s forwards;
     display: flex;

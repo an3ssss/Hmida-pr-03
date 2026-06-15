@@ -583,6 +583,8 @@ function checkForCustomerInfoAndDisplayInfoPage() {
                 })
                 ordersTotalItems += items;
             })
+            let ordersTotalDelivery = ordersPlaced.length * 850;
+            console.log(ordersTotalDelivery);
             page.innerHTML = `<div class="orders">
                                     <div class="page-buttons-div">
                                         <button class="page-button-01 js-page-button-01"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff" style="transform: translateY(-2px);"><path d="m480-560-56-56 63-64H320v-80h167l-64-64 57-56 160 160-160 160ZM223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg>Checkout</button>
@@ -630,9 +632,9 @@ function checkForCustomerInfoAndDisplayInfoPage() {
                                                 <div class="confirm-order-p-div"><p class="confirm-order-p">Itmes(${ordersTotalItems}):</p></div>
                                                 <div class="confirm-order-p-div"><p class="confirm-order-p">${ordersTotalPrice} DA</p></div>
                                                 <div class="confirm-order-p-div"><p class="confirm-order-p">Delivery:</p></div>
-                                                <div class="confirm-order-p-div"><p class="confirm-order-p">850 DA</p></div>
+                                                <div class="confirm-order-p-div"><p class="confirm-order-p">${ordersTotalDelivery} DA</p></div>
                                                 <div class="confirm-order-p-div"><p class="confirm-order-p">Total:</p></div>
-                                                <div class="confirm-order-p-div"><p class="confirm-order-p">${ordersTotalPrice + 850} DA</p></div>
+                                                <div class="confirm-order-p-div"><p class="confirm-order-p">${ordersTotalPrice + ordersTotalDelivery} DA</p></div>
                                             </div>
                                             <div class="confirm-order-buttons-div">
                                                 <div style="display: flex;"><button class="confirm-order-button js-confirm-order"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>Confirm</button></div>
@@ -932,12 +934,12 @@ function checkForCustomerInfoAndDisplayInfoPage() {
                                     </div>
                                     <div class="confirm-order-div">
                                         <div class="confirm-order-grid">
-                                            <div class="confirm-order-p-div"><p class="confirm-order-p">Itmes(3):</p></div>
-                                            <div class="confirm-order-p-div"><p class="confirm-order-p">24000 DA</p></div>
+                                            <div class="confirm-order-p-div"><p class="confirm-order-p">Itmes(0):</p></div>
+                                            <div class="confirm-order-p-div"><p class="confirm-order-p">0 DA</p></div>
                                             <div class="confirm-order-p-div"><p class="confirm-order-p">Delivery:</p></div>
-                                            <div class="confirm-order-p-div"><p class="confirm-order-p">850 DA</p></div>
+                                            <div class="confirm-order-p-div"><p class="confirm-order-p">0 DA</p></div>
                                             <div class="confirm-order-p-div"><p class="confirm-order-p">Total:</p></div>
-                                            <div class="confirm-order-p-div"><p class="confirm-order-p">24850 DA</p></div>
+                                            <div class="confirm-order-p-div"><p class="confirm-order-p">0 DA</p></div>
                                         </div>
                                         <div class="confirm-order-buttons-div">
                                             <div style="display: flex;"><button class="confirm-order-button js-confirm-order"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>Confirm</button></div>
@@ -962,6 +964,8 @@ function checkForCustomerInfoAndDisplayInfoPage() {
 
                 let ordersConfirmedMainHtml = '';
                 ordersConfirmed.forEach((theConfirmedOrder) => {
+                    let orderConfirmedTotalPrice = 0;
+                    console.log('ok');
                     let theOrdersHtml = '';
                     theConfirmedOrder.confirmedOrder.forEach((product) => {
                         let html = `<div class="product">
@@ -977,6 +981,8 @@ function checkForCustomerInfoAndDisplayInfoPage() {
                                         </div>
                                     </div>`;
                         theOrdersHtml += html;
+                        orderConfirmedTotalPrice += product.price;
+                        console.log('ok');
                     })
                     ordersConfirmedMainHtml += `<div class="confirmed-order">
                                                     <p class="confirmed-order-main-info">Order: #HM-921-${theConfirmedOrder.orderNumber}</p>
@@ -993,10 +999,11 @@ function checkForCustomerInfoAndDisplayInfoPage() {
                                                         <p class="order-confirmed-customer-info-p" style="margin: 10px;">${theConfirmedOrder.customerNote}</p>
                                                         <p class="order-confirmed-customer-info-p" style="margin: 10px;">Delivery Time : 24h - 72h</p>
                                                         <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.paymentMethod}</p></div>
-                                                        <p class="order-confirmed-customer-info-p" style="margin: 10px;">Order Total : ${theConfirmedOrder.orderTotalPrice} DA</p>
+                                                        <p class="order-confirmed-customer-info-p" style="margin: 10px;">Order Total : ${orderConfirmedTotalPrice + 850} DA</p>
                                                         <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff"><path d="M612-292 440-464v-216h80v184l148 148-56 56Zm-498-25q-13-29-21-60t-11-63h81q3 21 8.5 42t13.5 41l-71 40ZM82-520q3-32 11-63.5t22-60.5l70 40q-8 20-13.5 41t-8.5 43H82Zm165 366q-27-20-50-43.5T154-248l70-40q14 18 29.5 33.5T287-225l-40 71Zm-22-519-71-40q20-27 43-50t50-43l40 71q-17 14-32.5 29.5T225-673ZM440-82q-32-3-63.5-11T316-115l40-70q20 8 41 13.5t43 8.5v81Zm-84-693-40-70q29-14 60.5-22t63.5-11v81q-22 3-43 8.5T356-775ZM520-82v-81q22-3 43-8.5t41-13.5l40 70q-29 14-60.5 22T520-82Zm84-693q-20-8-41-13.5t-43-8.5v-81q32 3 63.5 11t60.5 22l-40 70Zm109 621-40-71q17-14 32.5-29.5T735-287l71 40q-20 27-43 50.5T713-154Zm22-519q-14-17-29.5-32.5T673-735l40-71q27 19 50 42t42 50l-70 41Zm62 153q-3-22-8.5-43T775-604l70-41q13 30 21.5 61.5T878-520h-81Zm48 204-70-40q8-20 13.5-41t8.5-43h81q-3 32-11 63.5T845-316Z"/></svg><p class="order-confirmed-customer-info-p">Order State : ${theConfirmedOrder.orderState}</p></div>
                                                     </div>
                                                 </div>`;
+                                                console.log('ok');
                     
                     pageTwo.innerHTML = `<div class="customer-info-title-div">
                                             <p class="customer-info-title-p">Confirmed orders</p>
@@ -1121,12 +1128,12 @@ function checkForCustomerInfoAndDisplayInfoPage() {
                                                     </div>
                                                     <div class="confirm-order-div">
                                                         <div class="confirm-order-grid">
-                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">Itmes(3):</p></div>
-                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">24000 DA</p></div>
+                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">Itmes(0):</p></div>
+                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">0 DA</p></div>
                                                             <div class="confirm-order-p-div"><p class="confirm-order-p">Delivery:</p></div>
-                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">850 DA</p></div>
+                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">0 DA</p></div>
                                                             <div class="confirm-order-p-div"><p class="confirm-order-p">Total:</p></div>
-                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">24850 DA</p></div>
+                                                            <div class="confirm-order-p-div"><p class="confirm-order-p">0 DA</p></div>
                                                         </div>
                                                         <div class="confirm-order-buttons-div">
                                                             <div style="display: flex;"><button class="confirm-order-button js-confirm-order"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>Confirm</button></div>
@@ -1191,52 +1198,57 @@ function checkForCustomerInfoAndDisplayInfoPage() {
 
 
             let ordersConfirmedMainHtml = '';
-            ordersConfirmed.forEach((theConfirmedOrder) => {
-                let theOrdersHtml = '';
-                theConfirmedOrder.confirmedOrder.forEach((product) => {
-                    let html = `<div class="product">
-                                    <div class="product-pic-div">
-                                        <img src="${product.img}" alt="product-pic" class="product-pic">
-                                    </div>
-                                    <div class="product-info-div">
-                                        <p class="product-info">${product.name}</p>
-                                        <p class="product-info">Size: ${product.size}</p>
-                                    </div>
-                                    <div class="product-price-div">
-                                        <p class="product-price">${product.price} DA</p>
-                                    </div>
-                                </div>`;
-                    theOrdersHtml += html;
-                })
-                ordersConfirmedMainHtml += `<div class="confirmed-order">
-                                                <p class="confirmed-order-main-info">Order: #HM-921-${theConfirmedOrder.orderNumber}</p>
-                                                <p class="confirmed-order-main-info">Time: ${theConfirmedOrder.orderTime}</p>
-                                                
-                                                ${theOrdersHtml};
-
-                                                <div class="order-confirmed-customer-info">
-                                                    <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm0 400Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerName}</p></div>
-                                                    <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerNumber}</p></div>
-                                                    <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerEmail}</p></div>
-                                                    <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerAddress}</p></div>
-                                                    <p class="order-confirmed-customer-info-p" style="margin: 10px;">Note :</p>
-                                                    <p class="order-confirmed-customer-info-p" style="margin: 10px;">${theConfirmedOrder.customerNote}</p>
-                                                    <p class="order-confirmed-customer-info-p" style="margin: 10px;">Delivery Time : 24h - 72h</p>
-                                                    <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.paymentMethod}</p></div>
-                                                    <p class="order-confirmed-customer-info-p" style="margin: 10px;">Order Total : ${theConfirmedOrder.orderTotalPrice} DA</p>
-                                                    <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff"><path d="M612-292 440-464v-216h80v184l148 148-56 56Zm-498-25q-13-29-21-60t-11-63h81q3 21 8.5 42t13.5 41l-71 40ZM82-520q3-32 11-63.5t22-60.5l70 40q-8 20-13.5 41t-8.5 43H82Zm165 366q-27-20-50-43.5T154-248l70-40q14 18 29.5 33.5T287-225l-40 71Zm-22-519-71-40q20-27 43-50t50-43l40 71q-17 14-32.5 29.5T225-673ZM440-82q-32-3-63.5-11T316-115l40-70q20 8 41 13.5t43 8.5v81Zm-84-693-40-70q29-14 60.5-22t63.5-11v81q-22 3-43 8.5T356-775ZM520-82v-81q22-3 43-8.5t41-13.5l40 70q-29 14-60.5 22T520-82Zm84-693q-20-8-41-13.5t-43-8.5v-81q32 3 63.5 11t60.5 22l-40 70Zm109 621-40-71q17-14 32.5-29.5T735-287l71 40q-20 27-43 50.5T713-154Zm22-519q-14-17-29.5-32.5T673-735l40-71q27 19 50 42t42 50l-70 41Zm62 153q-3-22-8.5-43T775-604l70-41q13 30 21.5 61.5T878-520h-81Zm48 204-70-40q8-20 13.5-41t8.5-43h81q-3 32-11 63.5T845-316Z"/></svg><p class="order-confirmed-customer-info-p">Order State : ${theConfirmedOrder.orderState}</p></div>
-                                                </div>
-                                            </div>`;
-                
-                pageTwo.innerHTML = `<div class="customer-info-title-div">
-                                        <p class="customer-info-title-p">Confirmed orders</p>
-                                    </div>
-                                    <div class="page-02-main-container">
-                                        <div class="page-02-container">
-                                           ${ordersConfirmedMainHtml};
+                ordersConfirmed.forEach((theConfirmedOrder) => {
+                    let orderConfirmedTotalPrice = 0;
+                    console.log('ok');
+                    let theOrdersHtml = '';
+                    theConfirmedOrder.confirmedOrder.forEach((product) => {
+                        let html = `<div class="product">
+                                        <div class="product-pic-div">
+                                            <img src="${product.img}" alt="product-pic" class="product-pic">
+                                        </div>
+                                        <div class="product-info-div">
+                                            <p class="product-info">${product.name}</p>
+                                            <p class="product-info">Size: ${product.size}</p>
+                                        </div>
+                                        <div class="product-price-div">
+                                            <p class="product-price">${product.price} DA</p>
                                         </div>
                                     </div>`;
-            })
+                        theOrdersHtml += html;
+                        orderConfirmedTotalPrice += product.price;
+                        console.log('ok');
+                    })
+                    ordersConfirmedMainHtml += `<div class="confirmed-order">
+                                                    <p class="confirmed-order-main-info">Order: #HM-921-${theConfirmedOrder.orderNumber}</p>
+                                                    <p class="confirmed-order-main-info">Time: ${theConfirmedOrder.orderTime}</p>
+                                                    
+                                                    ${theOrdersHtml};
+
+                                                    <div class="order-confirmed-customer-info">
+                                                        <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm0 400Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerName}</p></div>
+                                                        <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerNumber}</p></div>
+                                                        <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerEmail}</p></div>
+                                                        <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.customerAddress}</p></div>
+                                                        <p class="order-confirmed-customer-info-p" style="margin: 10px;">Note :</p>
+                                                        <p class="order-confirmed-customer-info-p" style="margin: 10px;">${theConfirmedOrder.customerNote}</p>
+                                                        <p class="order-confirmed-customer-info-p" style="margin: 10px;">Delivery Time : 24h - 72h</p>
+                                                        <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(70, 70, 70)"><path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/></svg><p class="order-confirmed-customer-info-p">${theConfirmedOrder.paymentMethod}</p></div>
+                                                        <p class="order-confirmed-customer-info-p" style="margin: 10px;">Order Total : ${orderConfirmedTotalPrice + 850} DA</p>
+                                                        <div class="order-confirmed-customer-info-div"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fffff"><path d="M612-292 440-464v-216h80v184l148 148-56 56Zm-498-25q-13-29-21-60t-11-63h81q3 21 8.5 42t13.5 41l-71 40ZM82-520q3-32 11-63.5t22-60.5l70 40q-8 20-13.5 41t-8.5 43H82Zm165 366q-27-20-50-43.5T154-248l70-40q14 18 29.5 33.5T287-225l-40 71Zm-22-519-71-40q20-27 43-50t50-43l40 71q-17 14-32.5 29.5T225-673ZM440-82q-32-3-63.5-11T316-115l40-70q20 8 41 13.5t43 8.5v81Zm-84-693-40-70q29-14 60.5-22t63.5-11v81q-22 3-43 8.5T356-775ZM520-82v-81q22-3 43-8.5t41-13.5l40 70q-29 14-60.5 22T520-82Zm84-693q-20-8-41-13.5t-43-8.5v-81q32 3 63.5 11t60.5 22l-40 70Zm109 621-40-71q17-14 32.5-29.5T735-287l71 40q-20 27-43 50.5T713-154Zm22-519q-14-17-29.5-32.5T673-735l40-71q27 19 50 42t42 50l-70 41Zm62 153q-3-22-8.5-43T775-604l70-41q13 30 21.5 61.5T878-520h-81Zm48 204-70-40q8-20 13.5-41t8.5-43h81q-3 32-11 63.5T845-316Z"/></svg><p class="order-confirmed-customer-info-p">Order State : ${theConfirmedOrder.orderState}</p></div>
+                                                    </div>
+                                                </div>`;
+                                                console.log('ok');
+                    
+                    pageTwo.innerHTML = `<div class="customer-info-title-div">
+                                            <p class="customer-info-title-p">Confirmed orders</p>
+                                        </div>
+                                        <div class="page-02-main-container">
+                                            <div class="page-02-container">
+                                            ${ordersConfirmedMainHtml};
+                                            </div>
+                                        </div>`;
+                })
 
             console.log(ordersConfirmed);
 

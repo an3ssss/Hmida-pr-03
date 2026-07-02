@@ -692,7 +692,7 @@ function checkForCustomerInfoAndDisplayInfoPage() {
                                 <div class="confirm-canceling-order-main">
                                     <div class="confirm-canceling-order-box">
                                         <div class="confirm-canceling-order-inner-box">
-                                            <p class="confirm-canceling-order-p">Are tou sure you want to cancel the order ?</p>
+                                            <p class="confirm-canceling-order-p">Are you sure you want to cancel the order ?</p>
                                             <div class="confirm-canceling-order-button-div"><button class="confirm-canceling-order-button-sure js-confirm-cancel-order-sure">Yes, I am</button></div>
                                             <div class="confirm-canceling-order-button-div"><button class="confirm-canceling-order-button-not-sure js-confirm-canceling-order-button-not-sure">No, I'm not</button></div>
                                         </div>
